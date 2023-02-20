@@ -1,0 +1,14 @@
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\bin\Debug\netcoreapp3.1\MethodGaus.exe
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\bin\Debug\netcoreapp3.1\MethodGaus.deps.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\bin\Debug\netcoreapp3.1\MethodGaus.runtimeconfig.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\bin\Debug\netcoreapp3.1\MethodGaus.runtimeconfig.dev.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\bin\Debug\netcoreapp3.1\MethodGaus.dll
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\bin\Debug\netcoreapp3.1\MethodGaus.pdb
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.csproj.AssemblyReference.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.AssemblyInfo.cs
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.dll
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.pdb
+C:\Users\Дмитрий\github_repo\ComputeMethods\MethodGaus\obj\Debug\netcoreapp3.1\MethodGaus.genruntimeconfig.cache
