@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RelocationMethod", "RelocationMethod\RelocationMethod.csproj", "{7FD50F57-8694-42C3-84AB-7DEC45752359}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LU_Method", "LU_Method\LU_Method.csproj", "{A4482135-432F-4F38-AFF5-A4E1287A4BE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FD50F57-8694-42C3-84AB-7DEC45752359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD50F57-8694-42C3-84AB-7DEC45752359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD50F57-8694-42C3-84AB-7DEC45752359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD50F57-8694-42C3-84AB-7DEC45752359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4482135-432F-4F38-AFF5-A4E1287A4BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4482135-432F-4F38-AFF5-A4E1287A4BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4482135-432F-4F38-AFF5-A4E1287A4BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4482135-432F-4F38-AFF5-A4E1287A4BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63DC3DDC-C776-4CBC-A3D2-5FACA5F0D6AD}
+	EndGlobalSection
+EndGlobal

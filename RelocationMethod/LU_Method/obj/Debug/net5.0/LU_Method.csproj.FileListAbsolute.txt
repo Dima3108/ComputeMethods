@@ -1,0 +1,16 @@
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\bin\Debug\net5.0\LU_Method.exe
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\bin\Debug\net5.0\LU_Method.deps.json
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\bin\Debug\net5.0\LU_Method.runtimeconfig.json
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\bin\Debug\net5.0\LU_Method.runtimeconfig.dev.json
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\bin\Debug\net5.0\LU_Method.dll
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\bin\Debug\net5.0\ref\LU_Method.dll
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\bin\Debug\net5.0\LU_Method.pdb
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.csproj.AssemblyReference.cache
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.AssemblyInfo.cs
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.dll
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\ref\LU_Method.dll
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.pdb
+C:\Users\Дмитрий\Downloads\RelocationMethod\RelocationMethod\LU_Method\obj\Debug\net5.0\LU_Method.genruntimeconfig.cache
