@@ -7,10 +7,10 @@ namespace RelocationMethod
    public class RelocationMethod
     {
         private Vector[] data;
-        private decimal[] R;
-        private decimal[] X0;
-        public decimal[] X_;
-        public const decimal XoVal = (decimal)1;
+        private double[] R;
+        private double[] X0;
+        public double[] X_;
+        public const double XoVal = 0;
             
         public RelocationMethod(Vector[] slay)
         {
@@ -30,10 +30,10 @@ namespace RelocationMethod
                         break;
                     }
             SupportSlay = sup;
-            X0 = new decimal[data.Length];
+            X0 = new double[data.Length];
             for (int i = 0; i < X0.Length; i++)
                 X0[i] = XoVal;
-            X_ = new decimal[X0.Length];
+            X_ = new double[X0.Length];
         }
         public bool SupportSlay { get; private set; }
         
@@ -41,25 +41,35 @@ namespace RelocationMethod
         {
             if (!SupportSlay)
                 return;
-            decimal a_ii;
+            double a_ii;
             for(int i = 0; i < data.Length; i++)
             {
                 a_ii = data[i][i];
                 data[i] /= a_ii;
-                //data[i][data[0].Length - 1] *= -1;// c_i
+                data[i] *= -1;
+                data[i][data[0].Length - 1] *= -1;// c_i
                 
             }
+            for (int e = 0; e < data.Length; e++)
+                X0[e] = data[e][data[0].Length - 1];
+            for(int i=0;i<data.Length;i++)
+                if(data[i][i]!=-1)
+                {
+                    SupportSlay = false;
+                    Console.WriteLine("a[i][i] не равно -1");
+                    return;
+                }    
              R = GetR();
         }
-        public decimal[] GetR()
+        public double[] GetR()
         {
-            decimal[] R = new decimal[data.Length];
-            int len = data.Length;
+            var R = new double[data.Length];
+            int len = data[0].Length;
             for(int i = 0; i < R.Length; i++)
             {
                 R[i] = data[i][len - 1];
                 R[i] -= X0[i];
-                for(int j=0;j<len;j++)
+                for(int j=0;j<data.Length;j++)
                     if (j != i)
                     {
                         R[i] += data[i][j]*X0[j];
@@ -67,9 +77,9 @@ namespace RelocationMethod
             }
             return R;
         }
-        public decimal GetMax(decimal[] m)
+        public double GetMax(double[] m)
         {
-            decimal v = Math.Abs(m[0]);
+            var v = Math.Abs(m[0]);
             for(int i = 0; i < m.Length; i++)
             {
                 if (v < Math.Abs(m[i]))
@@ -77,22 +87,28 @@ namespace RelocationMethod
             }
             return v;
         }
-        public int GetMaxPos(decimal[] m)
+        public int GetMaxPos(double[] m)
         {
             int p = 0;
-            decimal v = Math.Abs(m[0]);
+            var v = m[0];
             for (int i = 0; i < m.Length; i++)
             {
-                if (v < Math.Abs(m[i]))
+                if (v < //Math.Abs(
+                    m[i]
+                    //)
+                    )
                 {
-  v = Math.Abs(m[i]);
+  v = //Math.Abs(
+      m[i]
+     // )
+                        ;
                     p = i;
                 }
                   
             }
             return p;
         }
-        public bool IsMin(decimal[] d,decimal eps)
+        public bool IsMin(double[] d,double eps)
         {
             for (int i = 0; i < d.Length; i++)
                 if (d[i] >= eps)
@@ -100,29 +116,36 @@ namespace RelocationMethod
 
             return true;
         }
-        public void Iterations(decimal eps)
+        public void Iterations(double eps)
         {
-            decimal[] R1 = new decimal[R.Length];
+            var R1 = new double[R.Length];
             int iter_count = 0;
-            List<decimal[]> l = new List<decimal[]>();
+            List<double[]> l = new List<double[]>();
             while (!IsMin(R,eps) &&iter_count<200)
             {
-                int pos = GetMaxPos(R1);
+                int pos = GetMaxPos(R);
                 R1[pos] = 0;
                 for(int i = 0; i < R1.Length; i++)
                 {
                     if (i != pos)
                     {
                         R1[i] = R[i];
-                        for (int j = 0; j < data.Length; j++)
-                            R1[i] += R[j] * data[i][j];
+                       // for (int j = 0; j < data.Length; j++)
+                            //if(i!=j)
+                            R1[i] +=R[pos] * 
+                           // 0.5*
+                                    data[i][pos];
                     }
                 }
                
-                R1.CopyTo(R, 0);
- l.Add(R);
+               
+ l.Add(R); R1.CopyTo(R, 0);
                 iter_count++;
+                //if (iter_count == 38)
+                 //   break;
             }
+            if (iter_count >= 200)
+                Console.WriteLine("iterations > 200");
             for(int i = 0; i < X0.Length; i++)
             {
                 X_[i] = X0[i];
@@ -130,6 +153,6 @@ namespace RelocationMethod
                     X_[i] += l[j][i];
             }
         }
-        public decimal[] GetX() => X_;
+        public double[] GetX() => X_;
     }
 }

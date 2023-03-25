@@ -6,9 +6,9 @@ namespace RelocationMethod
 {
    public class Vector
     {
-        public decimal[] elemets { get; set; }
+        public double[] elemets { get; set; }
         public int Length { get => elemets.Length; }
-        public decimal this[int i] { get
+        public double this[int i] { get
             {
                 if (i >= 0 && i < elemets.Length)
                     return elemets[i];
@@ -20,29 +20,29 @@ namespace RelocationMethod
                     elemets[i] = value;
             }
         }
-        public Vector(decimal[] m)
+        public Vector(double[] m)
         {
             elemets = m;
         }
-        public void Add(decimal b)
+        public void Add(double b)
         {
-            decimal[] d2 = new decimal[elemets.Length + 1];
+            var d2 = new double[elemets.Length + 1];
             elemets.CopyTo(d2, 0);
             d2[d2.Length - 1] = b;
             elemets = d2;
         }
-        public static Vector operator*(Vector x,decimal y)
+        public static Vector operator*(Vector x,double y)
         {
             Vector r = x;
             for (int i = 0; i < x.Length; i++)
                 r[i] *= y;
             return r;
         }
-        public static Vector operator/(Vector x,decimal y)
+        public static Vector operator/(Vector x,double y)
         {
             Vector r = x;
             for (int i = 0; i < x.Length; i++)
-                r[i] *= y;
+                r[i] /= y;
             return r;
         }
         public static Vector operator-(Vector x,Vector y)
@@ -60,7 +60,7 @@ namespace RelocationMethod
                 return null;
             Vector re = x;
             for (int i = 0; i < re.Length; i++)
-                re[i] -= y[i];
+                re[i] += y[i];
             return re;
         }
     }
