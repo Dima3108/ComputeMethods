@@ -1,0 +1,14 @@
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.AssemblyInfo.cs
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\bin\x64\Release\netcoreapp3.1\RelocationMethod.exe
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\bin\x64\Release\netcoreapp3.1\RelocationMethod.deps.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\bin\x64\Release\netcoreapp3.1\RelocationMethod.runtimeconfig.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\bin\x64\Release\netcoreapp3.1\RelocationMethod.runtimeconfig.dev.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\bin\x64\Release\netcoreapp3.1\RelocationMethod.dll
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\bin\x64\Release\netcoreapp3.1\RelocationMethod.pdb
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.csproj.AssemblyReference.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.dll
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.pdb
+C:\Users\Дмитрий\github_repo\ComputeMethods\RelocationMethod\R2\obj\x64\Release\netcoreapp3.1\RelocationMethod.genruntimeconfig.cache

@@ -27,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {},
           "W:\\7ZipSDK\\sharpCompress\\src\\SharpCompress\\bin\\Debug": {},
           "W:\\GITHub\\npgsql-5.0.12\\npgsql-5.0.12\\src\\Npgsql\\bin\\Debug": {},

@@ -1,35 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Runtime;
+using System.Runtime.InteropServices;
 namespace RelocationMethod
 {
    public class Vector
     {
-        public double[] elemets { get; set; }
-        public int Length { get => elemets.Length; }
-        public double this[int i] { get
+        private IntPtr elemets;
+ private unsafe double* el { get => (double*)elemets; }
+        public int Length { get; private set; }
+        public unsafe double this[int i] { get
             {
-                if (i >= 0 && i < elemets.Length)
-                    return elemets[i];
+               
+                if (i >= 0 && i < Length)
+                    return el[i];
                 throw new IndexOutOfRangeException();
             }
             set
             {
-                if (i >= 0 && i < elemets.Length)
-                    elemets[i] = value;
+                if (i >= 0 && i < Length)
+                    el[i] = value;
             }
         }
-        public Vector(double[] m)
+        public unsafe Vector(double[] m)
         {
-            elemets = m;
+            elemets = Marshal.AllocHGlobal(sizeof(double) * m.Length);
+           // el = (double*)elemets;
+            Marshal.Copy(m, 0, elemets, m.Length);
+            Length = m.Length;
         }
         public void Add(double b)
         {
-            var d2 = new double[elemets.Length + 1];
-            elemets.CopyTo(d2, 0);
+            var d2 = new double[Length + 1];
+            /*elemets.CopyTo(d2, 0);
             d2[d2.Length - 1] = b;
-            elemets = d2;
+            elemets = d2;*/
+            unsafe
+            {
+                Marshal.Copy(elemets, d2, 0, d2.Length);
+                d2[d2.Length - 1] = b;
+                Marshal.FreeHGlobal(elemets);
+                elemets = Marshal.AllocHGlobal(sizeof(double) * d2.Length);
+                Marshal.Copy(d2, 0, elemets, d2.Length);
+                Length = d2.Length;
+            }
         }
         public static Vector operator*(Vector x,double y)
         {
@@ -62,6 +77,14 @@ namespace RelocationMethod
             for (int i = 0; i < re.Length; i++)
                 re[i] += y[i];
             return re;
+        }
+        ~Vector()
+        {
+            unsafe
+            {
+                Marshal.FreeHGlobal(elemets);
+
+            }
         }
     }
 }

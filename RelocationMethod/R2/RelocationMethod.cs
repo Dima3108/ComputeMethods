@@ -32,7 +32,7 @@ namespace RelocationMethod
             SupportSlay = sup;
             X0 = new double[data.Length];
             for (int i = 0; i < X0.Length; i++)
-                X0[i] = XoVal;
+                X0[i] = (double)XoVal;
             X_ = new double[X0.Length];
         }
         public bool SupportSlay { get; private set; }
@@ -41,7 +41,8 @@ namespace RelocationMethod
         {
             if (!SupportSlay)
                 return;
-            double a_ii;
+            Double a_ii;
+#if !false
             for(int i = 0; i < data.Length; i++)
             {
                 a_ii = data[i][i];
@@ -50,16 +51,19 @@ namespace RelocationMethod
                 data[i][data[0].Length - 1] *= -1;// c_i
                 
             }
-            for (int e = 0; e < data.Length; e++)
-                X0[e] = data[e][data[0].Length - 1];
+#endif
+            //for (int e = 0; e < data.Length; e++)
+               // X0[e] = data[e][data[0].Length - 1];
+#if false
             for(int i=0;i<data.Length;i++)
                 if(data[i][i]!=-1)
                 {
                     SupportSlay = false;
                     Console.WriteLine("a[i][i] не равно -1");
                     return;
-                }    
-             R = GetR();
+                }  
+#endif
+            // R = GetR();
         }
         public double[] GetR()
         {
@@ -73,6 +77,22 @@ namespace RelocationMethod
                     if (j != i)
                     {
                         R[i] += data[i][j]*X0[j];
+                    }
+            }
+            return R;
+        }
+        public unsafe double[] GetR(double*X,int Length)
+        {
+            var R = new double[data.Length];
+            int len = data[0].Length;
+            for (int i = 0; i < R.Length; i++)
+            {
+                R[i] = data[i][len - 1];
+                R[i] -= X[i];
+                for (int j = 0; j < data.Length; j++)
+                    if (j != i)
+                    {
+                        R[i] += data[i][j] * X[j];
                     }
             }
             return R;
@@ -116,25 +136,100 @@ namespace RelocationMethod
 
             return true;
         }
+        private unsafe void NextX(double*pred_x,double*next_x,int Length,double w = 0.5)
+        {
+            var a_sumij=pred_x[0];
+            for(int i = 0; i < Length; i++)
+            {
+                next_x[i] = (1 - w) * pred_x[i];
+                a_sumij = 0;
+                for(int j = 0; j < i; j++)
+                {
+                    a_sumij += data[i][j] * next_x[j];
+                }
+                for(int j = i + 1; j < Length; j++)
+                {
+                    a_sumij += data[i][j] * pred_x[j];
+                }
+                next_x[i] +=w/data[i][i]*(-1* data[i][data[0].Length - 1]-a_sumij);
+            }
+        }
+        private unsafe double get_max_delta(double* x, double* x_next,int Length)
+        {
+            var delta = Math.Abs(x_next[0] - x[0]);
+           var v=delta;
+            for (int i = 1; i < Length; i++)
+                if ((v = Math.Abs(x_next[i] - x[i])) > delta)
+                    delta = v;
+            return delta;
+        }
+        public static unsafe void UnsafeCopy(double*inp,double*outp,int Length,int input_offset=0,int output_offset = 0)
+        {
+            for (int i = 0; i < Length; i++)
+                outp[output_offset + i] = inp[input_offset + i];
+        }
+        public static unsafe void UnsafeCopy(double* inp, double[] outp, int Length, int input_offset = 0, int output_offset = 0)
+        {
+            for (int i = 0; i < Length; i++)
+                outp[output_offset + i] = inp[input_offset + i];
+        }
+        public unsafe void Iterations2(double eps)
+        {
+            //var X = X0;
+            double* X = stackalloc double[X0.Length];
+            double* X_NEXT = stackalloc double[X0.Length];
+            //var X_NEXT = X;
+            NextX(X, X_NEXT,X0.Length);
+            var delta = X[0];
+            var pred_delta=delta;
+            delta = get_max_delta(X, X_NEXT,X0.Length);pred_delta = delta;
+            int iter = 0;
+            while (
+                //((delta=get_max_delta(X, X_NEXT)) >= eps)
+                GetMax(GetR(X_NEXT,X0.Length))>eps
+                )
+            {
+                //X_NEXT.CopyTo(X, 0);
+                UnsafeCopy(X_NEXT, X, X0.Length);
+                NextX(X, X_NEXT,X0.Length);
+                if (delta < pred_delta)
+                    pred_delta = delta;
+                if (iter < 3||iter==37)
+                {
+                    Console.WriteLine();
+                    for(int p=0;p<X0.Length;p++)
+                        Console.WriteLine(X_NEXT[p]);
+                    Console.WriteLine();
+                }
+                iter++;
+                if (iter > 90000000)
+                    break;
+            }
+            Console.WriteLine("iterations:" + iter.ToString());
+            X_ = X0;
+            UnsafeCopy(X_NEXT, X_, X_.Length);
+            //X_NEXT.CopyTo(X_, 0);
+        }
         public void Iterations(double eps)
         {
+            return;
             var R1 = new double[R.Length];
             int iter_count = 0;
             List<double[]> l = new List<double[]>();
-            while (!IsMin(R,eps) &&iter_count<200)
+            while (!IsMin(R.ToDouble(),eps) &&iter_count<200)
             {
-                int pos = GetMaxPos(R);
+                int pos = GetMaxPos(R.ToDouble());
                 R1[pos] = 0;
                 for(int i = 0; i < R1.Length; i++)
                 {
                     if (i != pos)
                     {
-                        R1[i] = R[i];
+                        R1[i] = (double)R[i];
                        // for (int j = 0; j < data.Length; j++)
                             //if(i!=j)
-                            R1[i] +=R[pos] * 
+                            R1[i] +=(double)R[pos] * 
                            // 0.5*
-                                    data[i][pos];
+                                   (double) data[i][pos];
                     }
                 }
                
