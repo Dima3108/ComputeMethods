@@ -1,0 +1,14 @@
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\bin\Debug\netcoreapp3.1\GradientMethod.exe
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\bin\Debug\netcoreapp3.1\GradientMethod.deps.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\bin\Debug\netcoreapp3.1\GradientMethod.runtimeconfig.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\bin\Debug\netcoreapp3.1\GradientMethod.runtimeconfig.dev.json
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\bin\Debug\netcoreapp3.1\GradientMethod.dll
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\bin\Debug\netcoreapp3.1\GradientMethod.pdb
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.csproj.AssemblyReference.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.AssemblyInfo.cs
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.dll
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.pdb
+C:\Users\Дмитрий\github_repo\ComputeMethods\Gradient method\GradientMethod\obj\Debug\netcoreapp3.1\GradientMethod.genruntimeconfig.cache
