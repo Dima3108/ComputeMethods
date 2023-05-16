@@ -26,16 +26,23 @@ namespace SimpsoneM
     {
         static void Main(string[] args)
         {
-            SimpsonMethod simpsonMethod = new SimpsonMethod(new line_funct(), 2, 10);
-          Console.WriteLine(  simpsonMethod.ComputeResult() + "\n@\n");
-            SimpsonMethod simpsonMethod1 = new SimpsonMethod(new cvadro_func(), 3, 126);
-            Console.WriteLine(simpsonMethod1.ComputeResult() + "\n@\n");
-            SimpsonMethod simpsonMethod2 = new SimpsonMethod(new five_degfunc(), 21, 7504535.5875);
-            Console.WriteLine(simpsonMethod2.ComputeResult() + "\n@\n");
-            SimpsonMethod simpsonMethod3 = new SimpsonMethod(new free_one_degfunc(), -3, -389897100);
-            Console.WriteLine(simpsonMethod3.ComputeResult() + "\n@\n");
-            SimpsonMethod simpsonMethod4 = new SimpsonMethod(new seven_foo_one_degfunc(), -3, -8935.125);
-            Console.WriteLine(simpsonMethod4.ComputeResult()+"\n@\n");
+            /* SimpsonMethod simpsonMethod = new SimpsonMethod(new line_funct(), 2, 10);
+           Console.WriteLine(  simpsonMethod.ComputeResult() + "\n@\n");
+             SimpsonMethod simpsonMethod1 = new SimpsonMethod(new cvadro_func(), 3, 126);
+             Console.WriteLine(simpsonMethod1.ComputeResult() + "\n@\n");
+             SimpsonMethod simpsonMethod2 = new SimpsonMethod(new five_degfunc(), 21, 7504535.5875);
+             Console.WriteLine(simpsonMethod2.ComputeResult() + "\n@\n");
+             SimpsonMethod simpsonMethod3 = new SimpsonMethod(new free_one_degfunc(), -3, -389897100);
+             Console.WriteLine(simpsonMethod3.ComputeResult() + "\n@\n");
+             SimpsonMethod simpsonMethod4 = new SimpsonMethod(new seven_foo_one_degfunc(), -3, -8935.125);
+             Console.WriteLine(simpsonMethod4.ComputeResult()+"\n@\n");*/
+            Integrated intr = new Integrated(2, 18, new line_funct());
+            Console.WriteLine(intr.Compute(0.0000003));
+            Integrated intr2 = new Integrated( -3, -389897100,new free_one_degfunc());
+            Console.WriteLine(intr2.Compute(0.000003));
+           /* Integrated intr3 = new Integrated(-3, -8935.125, new seven_foo_one_degfunc())
+;
+            Console.WriteLine(intr3.Compute(0.00003));*/
         }
     }
 }

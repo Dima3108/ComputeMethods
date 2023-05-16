@@ -38,6 +38,14 @@ namespace SimpsoneM
             return ((x / 2) * (f_a + f_x)) - (a * f_x) + ((2 * f_xa) * (x - a));
 
         }
+        public static double ComputeValue(double a_,double b_, FunctionInterface f)
+        {
+            double a = Math.Min(a_, b_);
+            double b = Math.Max(a_, b_);
+            double v = (b - a) / 6;
+            double v2 = (b + a) / 2;
+            return v * (f.function(a) + f.function(v2) + f.function(b));
+        }
         public double DeviationEstimate(double d_b) =>Math.Abs( ( d_b/b) - 1.00000000);
         public double SegmentationCalculation(double start_val,double max_val,int crushing_step,double eps)
         {
